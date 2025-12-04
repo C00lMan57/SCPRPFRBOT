@@ -26,9 +26,25 @@ Exécution
 python bot.py
 ```
 
+Commandes disponibles
+
+Sessions/Sondages
+- `/session create <date>` : crée un sondage de présence (date format DD/MM/YY ou DD/MM/YYYY)
+- `/session cancel` : annule la dernière session (créateur, admin ou manage_guild)
+
+Modération
+- `/mod warn <user> [raison]` : avertit un utilisateur (3 warns = timeout 1 jour automatique)
+- `/mod ban <user> [raison]` : bannit un utilisateur
+- `/mod timeout <user> <durée_heures> [raison]` : met en timeout pour X heures (2 timeouts = ban automatique)
+- `/mod warns <user>` : affiche les avertissements et timeouts d'un utilisateur
+
+Autres
+- `!ping` : affiche la latence
+
 Notes
 - Activez l'intent "Message Content Intent" dans le portail Discord Developer si vous souhaitez lire le contenu des messages.
-- Le préfixe par défaut est `!`. La commande `!ping` répondra avec la latence.
+- Le préfixe par défaut est `!` pour les commandes prefix (seul `!ping` existe actuellement).
+- Les commandes de modération nécessitent la permission `manage_guild` ou le rôle `ADMIN_ROLE_ID`.
 
 Variables de configuration importantes
 - `DISCORD_TOKEN`: token du bot (obligatoire)
